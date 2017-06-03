@@ -26,10 +26,10 @@ $config	= array(
 		'TMPL_EXCEPTION_FILE' => APP_PATH.'/Lib/Action/Exception.php',
 		'URL_404_REDIRECT' =>'/Public/404.html',
 		'WECHAT'=>array(
-            'token'=>'tokenaccesskey', //填写你设定的key
-            'encodingaeskey'=>'encodingaeskey', //填写加密用的EncodingAESKey
-            'appid'=>'wxdk1234567890', //填写高级调用功能的app id, 请在微信开发模式后台查询
-            'appsecret'=>'xxxxxxxxxxxxxxxxxxx' //填写高级调用功能的密钥
+            'token'=>'devdingjiayucn', //填写你设定的key
+            'encodingaeskey'=>'', //填写加密用的EncodingAESKey
+            'appid'=>'wx55a7a7bd5fb0ce56', //填写高级调用功能的app id, 请在微信开发模式后台查询
+            'appsecret'=>'68c857db0a2315f58d9ff6af87ae9fa8' //填写高级调用功能的密钥
 		)
 );
 return array_merge($database, $config ,$sys_config);

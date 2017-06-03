@@ -1,0 +1,18 @@
+<?php
+$opt = array(
+        'appsecret'=>'68c857db0a2315f58d9ff6af87ae9fa8',//填写高级调用功能的密钥
+        'appid'=>'wx55a7a7bd5fb0ce56'	//填写高级调用功能的appid
+);
+
+$we = new Wechat($opt);
+$auth = $we->checkAuth();
+$js_ticket = $we->getJsTicket();
+if (!$js_ticket) {
+echo "获取js_ticket失败！<br>";
+echo '错误码：'.$we->errCode;
+echo ' 错误原因：'.ErrCode::getErrText($weObj->errCode);
+exit;
+}
+$url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+$js_sign = $we->getJsSign($url);
+?>
