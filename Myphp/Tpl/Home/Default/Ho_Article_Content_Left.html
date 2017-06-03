@@ -1,0 +1,43 @@
+<div class="pageblock">
+<div class="pageblock-title"><span>同类文章排行</span></div>
+<div class="pageblock-content">
+	<ul class="sidebar-article-list">
+<FCDREP:list name="Article" where='catid=$catid' order="hits desc" limit="10">
+		<li>
+			<p><a style="font-size:12px;" href="{$r.url}" target="_self">{$r[title]|str_cut=###,100}</a></p>
+		</li>
+</FCDREP:list>
+	</ul>
+</div>
+</div>
+
+<div class="blank10"></div>
+
+<div class="pageblock">
+<div class="pageblock-title"><span>最新资讯文章</span></div>
+<div class="pageblock-content">
+	<ul class="sidebar-article-list">
+<FCDREP:list name="Article" catid="" order="createtime desc" limit="10">
+	<li>
+		<p><a style="font-size:12px;" href="{$r.url}" target="_self">{$r[title]|str_cut=###,100}</a></p>
+	</li>
+</FCDREP:list>
+	</ul>
+</div>
+</div>
+
+<div class="blank10"></div>
+
+<div class="pageblock">
+<div class="pageblock-title"><span>联系我们</span></div>
+<div class="pageblock-content">
+<p>免费热线：{$site_mftel}</p>
+<p>电话： {$site_tel}</p>
+<p>工厂：{$site_gchang}</p>
+<p>地址：{$site_ass}</p>
+<p>传真： {$site_fax}</p>
+<p>Q Q：{$site_qq}</p>
+<p>Q Q：{$site_qqq}</p>
+<p>{$site_url}</p>
+</div>
+</div>

@@ -1,0 +1,14 @@
+# BEGIN MyCMS
+<IfModule rewrite_module> 
+#RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php?s=$1 [QSA,PT,L]
+RewriteRule ^(.*)Myphp/Tpl/(.*).html$ /403.html [QSA,PT,L]
+RewriteRule ^(.*)/(.*).php$ /403.html [QSA,PT,L]
+
+</IfModule>
+
+# END MyCMS
+ErrorDocument  404 /Public/404.html

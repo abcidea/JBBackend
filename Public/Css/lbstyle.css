@@ -1,0 +1,38 @@
+/*restart.css start*/
+html { background: none repeat scroll 0 0 #FFFFFF; color: #000000; }
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td { margin: 0; padding: 0; }
+table { border-collapse: collapse; border-spacing: 0; }
+fieldset, img { border: 0 none; }
+address, caption, cite, code, dfn, em, th, var { font-style: normal; font-weight: normal; }
+ol, ul { list-style: none outside none; }
+caption, th { text-align: left; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal; }
+q:before, q:after { content: ""; }
+abbr, acronym { border: 0 none; font-variant: normal; }
+sup { vertical-align: text-top; }
+sub { vertical-align: text-bottom; }
+input, textarea, select { font-family: inherit; font-size: inherit; font-weight: inherit; }
+input, textarea, select { }
+legend { color: #000000; }
+/*restart.css end*/
+html{ background: url("") repeat-x scroll 0 0px #054e8f; font: 12px "Verdana","arial","宋体";  line-height: 20px; word-break: break-all;word-wrap:break-word; }
+a{ color: #79717d; font-size: 12px; text-decoration: none; }
+a:hover{ color: #DB291D; }
+body{ margin-top: 0; color: #79717d;font-size:62.5%; font-size: 1em;}
+/*--头部--*/
+.header{width:1000px;height:178px;background:url("../Images/lblogin/header.jpg")  0 0 transparent;margin:0 auto;}
+/*--主体--*/
+.main{width:100%;height:329px;background:url("../Images/lblogin/main_bg.jpg") repeat 0 0 transparent;}
+.main .panel{width:1000px;height:100%;margin:0 auto;}
+.main .panel .mainLeft{width:526px;height:100%;float:left;}
+.main .panel .mainRight{width:420px;height:100%;float:left;background:url("../Images/lblogin/input_text_bg.jpg") no-repeat 46px 75px #f6f6f6;}
+.message{padding-left:46px;padding-top:32px;font-size:16px;color:#c81919;}
+.username, .userpwd{border:0;background:url() no-repeat  0 0 transparent;width:305px;height:34px;margin-left:52px;line-height:34px;}
+.username{margin-top:51px;}
+.userpwd{margin-top:46px;}
+.useryzm{border:0;background:url() no-repeat  0 0 transparent;width:144px;height:34px;margin-left:52px;margin-top:46px;line-height:34px;}
+.footer{width:1000px;height:auto;background:url("")  0 0 transparent;margin:0 auto;}
+.footerLeft{width:526px;height:83px;float:left;}
+.copyright{padding-top:63px;color:#a1a0a0;}
+.login{width:420px;height:83px;background:url("../Images/lblogin/btn.jpg") no-repeat 0 0 transparent;border:0;float:left;}
+.login:hover{background:url("../Images/lblogin/btn_hover.jpg") no-repeat 0 0 transparent;}

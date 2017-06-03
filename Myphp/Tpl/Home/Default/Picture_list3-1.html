@@ -1,0 +1,26 @@
+<include file="Home:hycats"/>
+<style>
+.team_pic li{height:auto;}
+.team_pic li .pic_link{height:auto;}
+</style>
+<div class="page w1000">
+    <div class="page-l l">
+	<include file="Ho:Page_Left"/>
+	</div>
+	<div class="page-r r">
+	<include file="Home:pos"/>
+	<div class="pagercontent">
+         <ul class="team_pic">
+		     <volist name="list" id="r">
+              <li><a class="pic_link highslide" href="{$r.thumb}"><img width="200" height="67" class="bimg" src="{$r.thumb}"></a><p class="pic_title"><font>{$r.title}</font></p></li>
+			 </volist>
+
+		 </ul>
+		 <div class="blank10"></div>
+		 <div class="pages">
+           {$pages}
+		 </div>
+	</div>
+	</div>
+</div>
+<div class="blank10"></div>

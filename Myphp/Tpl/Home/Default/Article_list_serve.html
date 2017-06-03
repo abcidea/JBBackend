@@ -1,0 +1,27 @@
+<include file="Home:hycats"/>
+<div class="page w1000">
+    <div class="page-l l">
+	<include file="Ho:left"/>
+	</div>
+	<div class="page-r r">
+	<include file="Home:pos"/>
+	<div class="pagercontent">
+         <ul>
+		     <volist name="list" id="r">
+              <li class="gccase"><a href="{$r.url}"><img width="160" height="120" class="bimg" src="{$r.thumb}"></a><p class="conp"><a href="{$r.url}"><font>{$r.title}</font></a>{$r.description|str_cut=###,220}</p></li>
+			 </volist>
+
+		 </ul>
+		 <div class="blank10"></div>
+		 <div class="pages">
+           {$pages}
+		 </div>
+	</div>
+	</div>
+</div>
+<div class="blank10"></div>
+
+
+
+
+

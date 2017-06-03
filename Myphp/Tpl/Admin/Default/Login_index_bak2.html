@@ -1,0 +1,102 @@
+{__NOLAYOUT__}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset={:C('DEFAULT_CHARSET')}" />
+		<title>{:L('system_name')} - 后台管理</title>
+		<load href='./Public/Css/style.css' />
+		<load href="./Public/Js/jquery.min.js"/>
+		<load href="./Public/Js/jquery.validate.js"/>
+		<load href="./Public/Js/jquery.form.js"/>
+		<load href="./Public/Js/my.js"/>
+		<!--[if IE 6]>
+				<script src="./Public/Js/png.js"  type="text/javascript" ></script>
+				<script type="text/javascript">
+				DD_belatedPNG.fix(' .login_box ');
+				</script>
+		<![endif]-->
+	</head>
+	<body onLoad="reload()" id="loginbg" style="margin:100px 0 0 0; background-color:#026AA9; padding:0px;">
+		<table width="893" border="0" cellspacing="0" cellpadding="0" align="center">
+			<tr>
+				<td>&nbsp;</td>
+				<td><img src="Public/Images/login/a2.gif" width="417" height="79" /></td>
+				<td><img src="Public/Images/login/a3.gif" width="238" height="79" /></td>
+			</tr>
+			<tr>
+				<td><img src="Public/Images/login/a4.gif" width="239" height="82" /></td>
+				<td><img src="Public/Images/login/a5.gif" width="417" height="82" /></td>
+				<td><img src="Public/Images/login/a6.gif" width="238" height="82" /></td>
+			</tr>
+			<tr>
+				<td><img src="Public/Images/login/a7.gif" width="239" height="115" /></td>
+				<td style="background:url(Public/Images/login/a8.gif) no-repeat; width:417px; height:115px;" valign="top">
+					<form method='post' name="login" id="form1" action="{:U('Login/doLogin')}">
+						<table width="60%" border="0" align="center" cellpadding="0" cellspacing="0">
+							<tr>
+								<td width="29%" height="25" align="right" valign="center">{:L('account')}:</td>
+								<td width="48%"><input id="username" name="username" type="text" class="loginbox" size="15" style="width:110px;"></td>
+								<td width="23%">&nbsp;</td>
+							</tr>
+							<tr>
+								<td height="25" align="right" valign="center">{:L('password')}:</td>
+								<td><input  name="password" type="password" class="loginbox" size="15" style="width:110px;"></td>
+								<td><input name="imageField" type="image" width="49" 
+								src="Public/Images/login/a1.gif" height="18" border="0"  style="border:0px;" /></td>
+							</tr>
+							<tr>
+								<td height="25" align="right" valign="center">{if $admin_verify}{:L('verify')}:{/if}</td>
+								<td>{if $admin_verify}<input name="verifyCode" class=""  class="inputbox" id="verifyCode"  size="6" value="" maxlength="4" /><img src="{:U('Home/Index/verify')}" onclick="javascript:resetVerifyCode();" class="checkcode" align="absmiddle"  title="{:L('resetVerifyCode')}" id="verifyImage"/>{/if}
+								<input type="hidden" name="ajax" value="1" /><!--<input type="submit" value="{:L('login')}" class="button"> <input type="reset" name="reset" value="{:L('reset')}" class="button" id="reset" />--></td>
+								<td width=30>
+									<div id="result" class="result none" style="color:#ffffff;"></div>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</td>
+				<td><img src="Public/Images/login/a9.gif" width="238" height="115" /></td>
+			</tr>
+			<tr>
+				<td><img src="Public/Images/login/a10.gif" width="239" height="86" /></td>
+				<td><img src="Public/Images/login/a11.gif" width="417" height="86" /></td>
+				<td><img src="Public/Images/login/a12.gif" width="238" height="86" /></td>
+			</tr>
+		</table>
+		<script language="JavaScript">
+
+			jQuery(document).ready(function($){
+				$('#form1').ajaxForm({
+					beforeSend:function(){
+						$('#result').html('<img src="./Public/Images/msg_loading.gif">').show();;
+					 },
+					success:       complete,  // post-submit callback
+					dataType: 'json'
+				});
+
+
+			});
+			function complete(data){
+					if (data.status==1)
+					{
+					 $('#result').html(data.info).show();
+					 //art.dialog.tips('{:L("logined_ok")}',2);
+					 setTimeout(function(){	window.location.href = '{:U("Index/index")}';},1000);
+					}else{
+						$('#result').html(data.info).show();
+					}
+			}
+			function reload(){
+				document.login.username.focus();
+				if(self!=top){
+				 window.top.location.href = '{:U("Login/index")}';
+				}
+				resetVerifyCode();
+			}
+			
+		</script>
+		<style type="text/css"> 
+			table td{font-family:Arial; font-size:12px;}
+			input{background:#292929; color:#FFFFFF; border:#CCCCCC 1px solid; height:20px;}
+		</style>
+	</body>
+</html>

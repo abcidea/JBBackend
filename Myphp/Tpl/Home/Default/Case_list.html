@@ -1,0 +1,36 @@
+
+<include file="Home:hycats"/>
+<div class="page w1000">
+    <div class="page-l l">
+	<include file="Ho:Case_left"/>
+	</div>
+	<div class="page-r r">
+	<include file="Home:pos"/>
+	<div class="pagercontent">
+         <ul>
+		     <volist name="list" id="r">
+              <li class="gccase"><a href="{$r.url}"><img width="160" height="120" class="bimg" src="{$r.thumb|thumb=###,160,120,1}"></a><p class="conp"><a href="{$r.url}"><font>{$r.title}</font></a>{$r.description|str_cut=###,180}</p></li>
+			 </volist>
+
+		 </ul>
+		 <div class="blank10"></div>
+		 <div class="pages">
+           {$pages}
+		 </div>
+	</div>
+	<div class="tjread">
+			<div class="tjread-title">推荐资讯:</div>
+			<ul>
+				<FCDREP:list name="Article" filed="thumb,url,title,description" limit="20" posid="4">
+				<li class="new-li"><a class="l" href="{$r.url}" title="{$r.title}">{$r.title|str_cut=###,30}</a><span class="r">[{$r.createtime|toDate=###,'Y-m-d'}]</span></li>
+				</FCDREP:list>
+			</ul>
+	</div>		
+	</div>
+</div>
+<div class="blank10"></div>
+
+
+
+
+

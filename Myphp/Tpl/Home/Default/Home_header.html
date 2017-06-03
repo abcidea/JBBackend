@@ -1,0 +1,50 @@
+<div class="top">
+
+	     <div class="maxtop w1000">
+		   <div class="logo"><img src="../Public/images/logo.jpg"/></div>
+		   <div class="adyu"><img src="../Public/images/adyu.jpg"/></div>
+		   <div class="favourite"><a onclick="javascript:try{window.external.AddFavorite(document.location.href,'丰韬广告')} catch (e) {alert('您的浏览器不支持此功能，请使用Ctrl+D进行添加'); }" href="#">加入收藏</a> |  <a href="http://weibo.com/ledzhaopai" target="_blank">企业微博</a> | <a href="/index.php?m=Format&a=rss">RRS订阅</a> | <a href="/sitemap.html">网站地图</a> | <a href="/sitemap.xml"　target="_blank">XML地图</a></div>
+		   <div class="tles"><p>全国统一热线、企业QQ：</p><p><font>400-0326-008</font></p></div>
+		 </div>
+
+         <div class="navsbg">
+		 <div class="navs w1000">
+		 <ul>
+              <li class="{if $ishome=='home'}cur{/if}"><a href="/">丰韬首页</a></li>
+			  <FCDREP:subcat catid="0" id="nav" key="i">
+			      {if $i < 7}
+				   
+				   <li class="{if $nav[id]==$bcid}cur{/if}"><a href="{$nav.url}">{$nav.catname}</a></li>
+				   
+				  {/if}
+			  </FCDREP:subcat>
+			  
+		 </ul>
+         </div>
+		 </div>
+
+		 <div class="search w1000">
+		                
+              <div class="gjc l"><span>服务直通车>>></span> 
+			  <FCDREP:subcat catid="13">
+			  <a href="{$r.url}">{$r.catname}</a>
+			  </FCDREP:subcat>
+			  </div>
+              
+			  <div class="searching r">
+                   <form name="infosearch" method="post" action="/index.php?m=Search">
+				   <input type="hidden" name="lang" value="1">
+				   <div class="yi_input l">
+				    <input onfocus="if (this.value=='请输入关键词') this.value='';" onblur="if (this.value=='') this.value='请输入关键词';" value="请输入关键词" name="keyword" type="text" class="infoInput" size="20"/>
+				   </div>
+				   <span class="r"><input type="submit" value="搜索"></span>
+				   </form>
+			  </div>
+
+		 </div>
+
+	
+</div>
+{if $ishome=='home'}
+<include file="Home:banner"/>
+{/if}

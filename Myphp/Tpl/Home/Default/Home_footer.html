@@ -1,0 +1,97 @@
+<div class="bottom">
+    <div class="w1000">
+	<div class="likes"><font><b>友情链接:</b></font> <FCDREP:link  typeid="2"  linktype="1" limit="20"><a href="{$r['siteurl']}" target="_blank" title="{$r['name']}" >{$r['name']}</a></FCDREP:link> </div>
+	<div class="lxfs">电话：&nbsp;{$site_tel}&nbsp;&nbsp;传真：&nbsp;{$site_fax}&nbsp;&nbsp;邮件：&nbsp;{$site_email}&nbsp;&nbsp;地址：&nbsp;{$site_ass }&nbsp;&nbsp;{$ipc}</div>
+	<div class="copyright"><p>Copyright©2003-2012 版权所有：{$site_name}</p></div>
+	</div>
+</div>
+
+{if $ishome=='home'}
+<script type="text/javascript" src="../Public/js/jcarousellite_1.0.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+
+    $(".pps_content").jCarouselLite({
+        btnNext: ".pnext",
+        btnPrev: ".pprev",
+		visible: 5
+    });
+
+	$(".gswj-content-lists").jCarouselLite({
+        btnNext: ".gnext",
+        btnPrev: ".gprev",
+		visible: 4
+    });
+})
+</script>
+
+<script type="text/javascript" src="../Public/js/highslide-with-gallery.js"></script>
+<link rel="stylesheet" type="text/css" href="../Public/css/highslide.css" />
+<script type="text/javascript">
+//图片预览效果
+	hs.graphicsDir = '../graphics/';
+	hs.align = 'center';
+	hs.transitions = ['expand', 'crossfade'];
+	hs.outlineType = 'rounded-white';
+	hs.fadeInOut = true;
+	//hs.dimmingOpacity = 0.75;
+
+	// Add the controlbar
+	hs.addSlideshow({
+		//slideshowGroup: 'group1',
+		interval: 5000,
+		repeat: false,
+		useControls: true,
+		fixedControls: 'fit',
+		overlayOptions: {
+			opacity: 0.75,
+			position: 'bottom center',
+			hideOnMouseOut: true
+		}
+	});
+</script>
+<style>
+.highslide-gallery ul li{background:none; border:0;}
+.highslide img{border:0;}
+</style>
+
+{/if}
+
+<script>
+//百度分享代码
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"4","bdPos":"left","bdTop":"100"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+<script type="text/javascript">
+	// 返回顶部js效果
+	function gotoTop(min_height){
+		//预定义返回顶部的html代码，它的css样式默认为不显示
+		var gotoTop_html = "<div id='gotoTop' onclick='javascript:scroll(0,0)'>返回顶部</div>";
+		//将返回顶部的html代码插入页面上id为page的元素的末尾 
+		$("#page").append(gotoTop_html);
+		$("#gotoTop").click(//定义返回顶部点击向上滚动的动画
+			function(){
+			//$('html,body').animate({scrollTop:0},700);
+		}).hover(//为返回顶部增加鼠标进入的反馈效果，用添加删除css类实现
+			function(){
+			//$(this).addClass("hover");
+			},
+			function(){
+			//$(this).removeClass("hover");
+		});
+		//获取页面的最小高度，无传入值则默认为600像素
+		min_height ? min_height = min_height : min_height = 600;
+		//为窗口的scroll事件绑定处理函数
+		$(window).scroll(function(){
+			//获取窗口的滚动条的垂直位置
+			var s = $(window).scrollTop();
+			//当窗口的滚动条的垂直位置大于页面的最小高度时，让返回顶部元素渐现，否则渐隐
+			if( s > min_height){
+				$("#gotoTop").fadeIn(100);
+			}else{
+				$("#gotoTop").fadeOut(200);
+			};
+		});
+	};
+	$(function(){gotoTop();});
+</script>

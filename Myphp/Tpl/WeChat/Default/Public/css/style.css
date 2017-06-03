@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* CSS 样式重置 */
+p,h3,html,body{padding:0;margin:0;}
+
+/*公共样式*/
+a {color: #000000;text-decoration: none;}
+a:hover {color: #1C5AA2;text-decoration: none;}
+
+/*结构样式*/
+.pagewrap{width:100%;}
+.header{height:auto;border:0 solid silver;}
+.main{width:100%;}
+.footer{clear:both;}
+
+/*网页最小宽度*/
+@media screen and (max-width: 320px){.pagewrap{width:320px;}.main{width:auto;}}
+
+/*网站标识*/
+.logo{padding: 0 0;text-align: center;background-color:#f0f0f0;}
+.logo img{border: 0 none;max-width: 266px;padding: 0;vertical-align: middle;}
+
+/*菜单栏*/
+.navitems {background: linear-gradient(#EEEEEE, #EFEFEF) repeat scroll 0 0 transparent;border-bottom: 1px solid #ECECEC;border-top: 1px solid #386FB1;box-shadow: 0 -4px 8px -4px #D3D3D3 inset;clear: both;font-size: 18px;padding: 4px 0;text-align: center;margin:0;}
+.navitems li {display: inline-block;line-height: 30px;text-align: center;width: 16%;}
+.navitems li a {color: #1C5AA2;display: block;}
+
+/*栏目公共样式*/
+.panel .title{background: linear-gradient(#F6F6F6, #EEEEEE) repeat scroll 0 0 transparent;box-shadow: 0 1px 1px #FFFFFF inset;border-bottom: 1px solid #D9DADC;border-top: 1px solid #D9DADC;clear: both;font-size: 20px;height: 44px;line-height: 44px;padding: 0 4px 0 12px;}
+.panel .title h3 {background: none repeat scroll 0 0 #F8F8F8;border-left: 1px solid #D9DADC;border-right: 1px solid #D9DADC;border-top: 2px solid #367ACA;color: #000000;float: left;height: 43px;line-height: 44px;padding: 0 20px;position: relative;}
+.panel .title .title-menu{overflow: hidden;text-align: right;padding-right:5px;}
+.panel .title .title-menu a{display: inline;padding: 0 2px; font-size:14px;}
+.panel .title .title-menu .point {color: #CCCCCC;display: inline;font-size: 14px;}
+.panel .list{clear: both;padding: 7px 12px;}
+.panel .list li{font-size: 18px;height: 34px;line-height: 34px;overflow: hidden;padding-right: 42px;position: relative;text-overflow: ellipsis;white-space: nowrap;}
+.panel .list li em{position: absolute;right: 0;text-align: right;top: -2px;z-index: 10;}
+.panel .list li em i{color: #888888;display: inline-block;font-size: 10px;font-style: normal;height: 34px;line-height: 34px;overflow: hidden;padding-right: 2px;}
+.panel .newsmore {background: none repeat scroll 0 0 #EEEEEE;clear: both;color: #333333;display: block;font-size: 14px;height: 30px;
+line-height: 30px;margin: 0 12px 10px;position: relative;text-align: center;}
+.panel .newsmore:hover{background: none repeat scroll 0 0 #377CCE;color:#FFFFFF;}
+
+/*工程案例*/
+.p_piclistbox {clear: both;margin: 0 auto;overflow: hidden;padding: 4px 12px 10px;width: 296px;}
+.p_piclistbox li {background-color: #EFEFEF;background-image: url("");background-position: center center;background-repeat: no-repeat;
+background-size: 60px auto;display: inline;float: left;font-size: 14px;height: 124px;margin: 6px 3px 0;overflow: hidden;position: relative;width: 142px;}
+.p_piclistbox li img {height: 124px;width: 142px;}
+.p_piclistbox_h3 {background: none repeat scroll 0 0 rgba(0, 0, 0, 0.6);bottom: 0;box-shadow: 0 1px 1px #FFFFFF inset;color: #FFFFFF;
+font-size: 14px;font-weight: normal;height: 26px;left: 0;line-height: 26px;overflow: hidden;padding: 0 10px;position: absolute;text-align: center;text-overflow: ellipsis;white-space: nowrap;width: 122px;}
+
+/*关于丰韬*/
+.pic_box {color: #787878;font-size: 13px;padding: 5px 0;text-align: center;float:left;}
+.pic_box img {border: 0 none;max-width: 266px;padding: 0;vertical-align: middle;}
+.article {clear: both;padding: 7px 12px;}
+.art_desc{font-size: 18px;height: 130px;line-height: 34px;overflow: hidden;padding-right: 0;position: relative;text-overflow: ellipsis;
+white-space: normal;padding-left:10px;}
+
+/*页尾*/
+.footer{background: url("../images/bg.png") repeat scroll 0 0 transparent;border-top: 1px solid #D0D0D0;box-shadow: 0 1px 0 #FFFFFF inset;font-size: 14px;padding: 14px 12px;position: relative;	}
+.footer_c {clear: both;height: auto;line-height: 26px;text-align: center;}

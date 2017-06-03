@@ -1,0 +1,31 @@
+<include file="Home:hycats"/>
+<div class="page w1000">
+    <div class="page-l l">
+	<include file="Ho:fwxm_Left"/>
+	</div>
+	<div class="page-r r">
+	<include file="Home:pos"/>
+	<div class="pagercontent">
+         <FCDREP:subcat catid="$cid">
+         <div class="index-lists">
+		      <h1><a title="{$r.catname}" href="{$r.url}">{$r.catname}</a></h1>
+			  <ul class="ct-list">
+			       <FCDREP:list sql="select * from ftgg_page where id=$r[id]" id="ls">
+              <li class="gccase"><a href="{$r.url}"><img width="160" height="120" class="bimg" src="{$ls.thumb|thumb=###,160,120,1}"></a><p class="conp"><a href="{$r.url}"><font>{$ls.title}</font></a>{$ls.description|str_cut=###,180}</p></li>				   
+				   </FCDREP:list>
+			  </ul>
+		 </div>	
+		 </FCDREP:subcat>
+		 
+	</div>
+	<div class="tjread">
+			<div class="tjread-title">推荐资讯:</div>
+			<ul>
+				<FCDREP:list name="Article" filed="thumb,url,title,description" limit="20" posid="4">
+				<li class="new-li"><a class="l" href="{$r.url}" title="{$r.title}">{$r.title|str_cut=###,30}</a><span class="r">[{$r.createtime|toDate=###,'Y-m-d'}]</span></li>
+				</FCDREP:list>
+			</ul>
+	</div>	
+	</div>
+</div>
+<div class="blank10"></div>

@@ -1,0 +1,23 @@
+<include file="Home:hycats"/>
+<div class="page w1000">
+    <div class="page-l l">
+	<include file="Ho:left"/>
+	</div>
+	<div class="page-r r">
+	<include file="Home:pos"/>
+	<div class="pagercontent">
+         <FCDREP:subcat catid="2">
+         <div class="index-lists">
+		      <h1><a title="{$r.catname}" href="{$r.url}">{$r.catname}</a></h1>
+			  <ul>
+			       <FCDREP:list name="article" filed="title,thumb,url" catid="$r[arrchildid]"  limit="5" id="ls">
+			       <li><div class="lsbox"><a href="{$ls.url}"><img width="120" height="100" src="{$ls.thumb}" alt="{$ls.title}"></a><p><a href="{$ls.url}">{$ls.title|str_cut=###,30}</a></p></div></li>
+				   </FCDREP:list>
+			  </ul>
+		 </div>	
+		 </FCDREP:subcat>
+		 
+	</div>
+	</div>
+</div>
+<div class="blank10"></div>

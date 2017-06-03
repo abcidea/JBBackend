@@ -1,0 +1,23 @@
+<link rel="stylesheet" type="text/css" href="../Public/css/travel.css" />
+<div class="travel_banner travel_focus travel_listimg" id="travel_focus">
+  <ul>
+    {loop}
+    <li><a href="{$r[link]}" target="_blank" style="background-image: url('{$r[pic]}');" ></a></li>
+    {/loop}
+
+  </ul>
+  <style>.travel_listimg .travel_btn{top:268px;}</style>
+  <div class="travel_btn">
+    <div class="travel_btn_bg"></div>
+    <div class="btn">{loop}<span>{$i}</span>{/loop}</div>
+    <div class="thRelative" style="width:100%;height:32px;overflow:hidden;">
+      <div class="travel_btn_text">
+	    {loop}
+        <p></p>
+        {/loop}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="../Public/js/travel_list.js" type="text/javascript"></script>

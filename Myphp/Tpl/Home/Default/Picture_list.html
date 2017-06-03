@@ -1,0 +1,56 @@
+<include file="Home:hycats"/>
+<div class="page w1000">
+    <div class="page-l l">
+	<include file="Ho:Page_Left"/>
+	</div>
+	<div class="page-r r">
+	<include file="Home:pos"/>
+	<div class="pagercontent">
+	
+		<div class="highslide-gallery">
+         <ul class="team_pic">
+		     <volist name="list" id="r">
+              <li><a class="pic_link highslide" onclick="return hs.expand(this)" href="{$r.thumb}"><img width=200 height=150 class="bimg" src="{$r.thumb|thumb=###,200,150,1}"></a><p class="pic_title">{$r.title}</p></li>
+			 </volist>
+
+		 </ul>
+		 </div>
+		 
+		 <div class="blank10"></div>
+		 <div class="pages">
+           {$pages}
+		 </div>
+	</div>
+	</div>
+</div>
+<div class="blank10"></div>
+
+<script type="text/javascript" src="../Public/js/highslide-with-gallery.js"></script>
+<link rel="stylesheet" type="text/css" href="../Public/css/highslide.css" />
+<script type="text/javascript">
+// 图片预览
+	hs.graphicsDir = '../graphics/';
+	hs.align = 'center';
+	hs.transitions = ['expand', 'crossfade'];
+	hs.outlineType = 'rounded-white';
+	hs.fadeInOut = true;
+	//hs.dimmingOpacity = 0.75;
+
+	// Add the controlbar
+	hs.addSlideshow({
+		//slideshowGroup: 'group1',
+		interval: 5000,
+		repeat: false,
+		useControls: true,
+		fixedControls: 'fit',
+		overlayOptions: {
+			opacity: 0.75,
+			position: 'bottom center',
+			hideOnMouseOut: true
+		}
+	});
+</script>
+<style>
+.highslide-gallery ul li{background:none; border:0;}
+.highslide img{border:0;}
+</style>

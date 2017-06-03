@@ -1,0 +1,37 @@
+<div class="pageblock">
+<div class="pageblock-title"><span>{$Categorys[$bcid][catname]}</span></div>
+<div class="pageblock-content">
+<ul>
+
+<FCDREP:subcat catid="$bcid" key="k">
+<li>
+<span><a href="{$r.url}">{$r.catname}</a></span>
+{if $r[child]}
+<ul>
+<FCDREP:subcat catid="$r[id]" id="rr">
+<li><a href="{$rr.url}">{$rr.catname}</a></li>
+</FCDREP:subcat>
+</ul>
+{/if}
+</li>
+</FCDREP:subcat>
+
+</ul>
+</div>
+</div>
+
+<div class="blank10"></div>
+
+<div class="pageblock">
+<div class="pageblock-title"><span>联系我们</span></div>
+<div class="pageblock-content">
+<p>免费热线：{$site_mftel}</p>
+<p>电话： {$site_tel}</p>
+<p>工厂：{$site_gchang}</p>
+<p>地址：{$site_ass}</p>
+<p>传真： {$site_fax}</p>
+<p>Q Q：{$site_qq}</p>
+<p>Q Q：{$site_qqq}</p>
+<p>{$site_url}</p>
+</div>
+</div>

@@ -1,0 +1,30 @@
+<include file="Home:hycats"/>
+<div class="page w1000">
+    <div class="page-l r">
+	<include file="Ho:Article_List_Left"/>
+	</div>
+	<div class="page-r l">
+	<include file="Home:pos"/>
+	<div class="pagercontent">
+         <ul>
+		     <volist name="list" id="r">
+              <li class="new-li">
+					<div class="new-li-tit"><a class="l" href="{$r.url}">{$r.title|str_cut=###,90}</a><span class="r">[{$r.createtime|toDate=###,'Y-m-d'}]</span></div>
+					<div class="new-li-desc">{$r.description|str_cut=###,320}</div>
+			  </li>
+			 </volist>
+
+		 </ul>
+		 <div class="blank10"></div>
+		 <div class="pages">
+           {$pages}
+		 </div>
+	</div>
+	</div>
+</div>
+<div class="blank10"></div>
+
+
+
+
+

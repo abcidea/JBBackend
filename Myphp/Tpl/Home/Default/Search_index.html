@@ -1,0 +1,29 @@
+<include file="Home:hycats"/>
+<div class="page w1000">
+    <div class="page-l l">
+	<include file="Ho:left"/>
+	</div>
+	<div class="page-r r">
+	<h3 class="title">
+			<div class="position" id="ny_navx">当前位置： <a href="/">首页</a> &gt;  搜索 </div>
+    </h3>
+	<div class="pagercontent">
+         <ul>
+		     <volist name="list" id="r">
+              <li class="gccase" style="height:100px;"><p class="conp" style="width:auto;"><a href="{$r.url}"><font>{$r.title}</font></a>{$r.description|str_cut=###,220}</p></li>
+			 </volist>
+
+		 </ul>
+		 <div class="blank10"></div>
+		 <div class="pages">
+           {$pages}
+		 </div>
+	</div>
+	</div>
+</div>
+<div class="blank10"></div>
+
+
+
+
+

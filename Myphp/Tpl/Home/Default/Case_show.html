@@ -1,0 +1,49 @@
+<include file="Home:hycats"/>
+<div class="page w1000">
+    <div class="page-l l">
+	<include file="Ho:left"/>
+	</div>
+	<div class="page-r r">
+	<include file="Home:pos"/>
+	<div class="pagercontent">
+         <h1 class="pagetitle">{$title}</h1>
+		 <div class="pathinfo">发布者：{$site_name}&nbsp;&nbsp;&nbsp;&nbsp;发布时间：{$createtime|toDate=###,'Y-m-d'}</div>
+		 <div class="infocon">{$content}</div>
+		 {if $keywords}
+		 <div class="guanjianci">
+		 	<font color="red">{:L('KEYWORD')}：<FCDREP:tags moduleid="moduleid" keywords="keywords"><strong>{$r.name}</strong>&nbsp; </FCDREP:tags></font>	
+		 </div>
+		 {/if}
+		<div class="prev_n">
+			<div class="nleft">
+				<ul class="tips">
+					<?php
+					$pre = M($module_name)->where("id<$id and lang=$langid")->field("title,url")->order("id desc")->find();
+					$next = M($module_name)->where("id>$id and lang=$langid")->field("title,url")->order("id asc")->find();
+					if($langid ==1){
+					$pre ? $pre = '上一篇：<a href="'.$pre['url'].'" target="_self">'.$pre['title'].'</a>' : $pre = '上一篇：已经是第一篇了';
+					$next ? $next = '下一篇：<a href="'.$next['url'].'" target="_self">'.$next['title'].'</a>' : $next = '下一篇：文章还没写出来呢';
+					}elseif($langid ==2){
+					$pre ? $pre = 'Previous：<a href="'.$pre['url'].'" target="_self">'.$pre['title'].'</a>' : $pre = 'Previous：Already the first of';
+					$next ? $next = 'Next：<a href="'.$next['url'].'" target="_self">'.$next['title'].'</a>' : $next = 'Next：Articles written it yet';								
+					}
+					?>
+					<li>{$pre}</li>
+					<li>{$next}</li>
+				</ul>
+			</div>
+			<div class="goback"><a href="javascript:history.back(-1)">返回</a></div>
+		</div>
+		<div class="xgread">
+			{if $keywords}
+				<div class="xgread-title">{:L('RELATED_ARTICLES')}:</div>
+				<ul>
+					<FCDREP:tags moduleid="2" keywords="keywords" list="1"> <li class="new-li"><a class="l" href="{$r.url}">{$r.title|str_cut=###,90}</a><span class="r">[{$r.createtime|toDate=###,'Y-m-d'}]</span></li></FCDREP:tags>
+				</ul>
+			{/if}
+		</div>
+			<script language="JavaScript" src="{:URL('Home-'.$module.'/hits?id='.$id)}"></script>		 
+	</div>
+	</div>
+</div>
+<div class="blank10"></div>
