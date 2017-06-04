@@ -10,6 +10,7 @@ class IndexAction extends WeChatBaseAction
     public function index()
     {
         $this->WeChatObj->text("http://dev.dingjiayu.cn/index.php?g=WeChat&m=Indexjs&a=index");
+       // $this->WeChatObj->text("http://dev.dingjiayu.cn/wxtest/");
         $this->WeChatObj->reply();
     }
 

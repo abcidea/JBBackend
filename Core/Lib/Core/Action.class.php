@@ -320,6 +320,10 @@ abstract class Action {
         if(strtoupper($type)=='JSON') {
             // 返回JSON数据格式到客户端 包含状态信息
             header('Content-Type:text/html; charset=utf-8');
+            // 允许跨域请求
+            header('Access-Control-Allow-Origin: *');
+            header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+            header('Access-Control-Allow-Methods: GET, POST, PUT');
             exit(json_encode($data));
         }elseif(strtoupper($type)=='XML'){
             // 返回xml格式数据

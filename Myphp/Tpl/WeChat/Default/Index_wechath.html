@@ -10,7 +10,7 @@ $js_ticket = $we->getJsTicket();
 if (!$js_ticket) {
 echo "获取js_ticket失败！<br>";
 echo '错误码：'.$we->errCode;
-echo ' 错误原因：'.ErrCode::getErrText($weObj->errCode);
+echo ' 错误原因：'.ErrCode::getErrText($we->errCode);
 exit;
 }
 $url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
