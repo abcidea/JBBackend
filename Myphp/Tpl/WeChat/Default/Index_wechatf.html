@@ -1,0 +1,47 @@
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"> </script>
+<script>
+    wx.config({
+        debug: true,
+        appId: '<?php echo $js_sign['appId']; ?>', // 必填，公众号的唯一标识
+        timestamp: <?php echo $js_sign['timestamp']; ?>, // 必填，生成签名的时间戳，切记时间戳是整数型，别加引号
+    nonceStr: '<?php echo $js_sign['nonceStr']; ?>', // 必填，生成签名的随机串
+        signature: '<?php echo $js_sign['signature']; ?>', // 必填，签名，见附录1
+        jsApiList: [
+        'checkJsApi',
+        'onMenuShareTimeline',
+        'onMenuShareAppMessage',
+        'onMenuShareQQ',
+        'onMenuShareWeibo',
+        'hideMenuItems',
+        'showMenuItems',
+        'hideAllNonBaseMenuItem',
+        'showAllNonBaseMenuItem',
+        'translateVoice',
+        'startRecord',
+        'stopRecord',
+        'onRecordEnd',
+        'playVoice',
+        'pauseVoice',
+        'stopVoice',
+        'uploadVoice',
+        'downloadVoice',
+        'chooseImage',
+        'previewImage',
+        'uploadImage',
+        'downloadImage',
+        'getNetworkType',
+        'openLocation',
+        'getLocation',
+        'hideOptionMenu',
+        'showOptionMenu',
+        'closeWindow',
+        'scanQRCode',
+        'chooseWXPay',
+        'openProductSpecificView',
+        'addCard',
+        'chooseCard',
+        'openCard'
+    ]
+    });
+</script>
+<script src="__PUBLIC__/Vendor/jsapi/jsapi-demo-6.1.js?ts=<?php echo $timestamp; ?>"> </script>

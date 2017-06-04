@@ -15,7 +15,7 @@
  * $data
  */
 if(!defined("Myphp")) exit("Access Denied");
-class WeChatBaseAction extends Action
+class WeChatJsBaseAction extends Action
 {
 
 	protected   $Config ,$sysConfig,$categorys,$module,$moduleid,$mod,$dao,$Type,$Role,$_userid,$_groupid,$_email,$_username ,$forward ,$user_menu,$Lang,$member_config,$wechat;
@@ -64,9 +64,6 @@ class WeChatBaseAction extends Action
              * 设置微信访问对象
              */
             vendor('wechat',VENDOR_PATH.'wechat','.class.php');
-            $this->WeChatObj = new Wechat(C('WECHAT')); //创建实例对象
-            $this->WeChatObj->valid();// 验证连接，被动接口处于加密模式时必须调用
-            $this->WeChatObj->getRev();// 获取微信服务器发来信息(不返回结果)，被动接口必须调用
 			/**
 			* 读取后台配置缓存文件
 			*/
